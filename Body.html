@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dress - Dijon</title>
+    <link rel="stylesheet" href="Body.css">
+    <div id="overlay" onclick="startExperience()" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fcfaf7; display: flex; justify-content: center; align-items: center; z-index: 9999; cursor: pointer; transition: opacity 1s;">
+    <div style="font-family: 'Playfair Display', serif; font-style: italic; color: #7a7a7a; font-size: 1.2rem;">Click to Open</div>
+</div>
+
+<audio id="music-container" loop>
+    <source src="The Dress.mp3" type="audio/mpeg">
+</audio>
+
+    <style>
+        :root {
+            --bg-color: #fcfaf7; /* Creamy paper feel */
+            --text-color: #2c2c2c;
+            --accent-color: #4a4a4a;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Cinematic Film Grain Overlay */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url(https://www.transparenttextures.com/patterns/stardust.png);
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        header {
+            margin-top: 10vh;
+            text-align: center;
+            margin-bottom: 5vh;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+
+        /* Letterbox Gallery Container */
+        .gallery {
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 120px; /* Space between "scenes" */
+            margin-bottom: 100px;
+        }
+
+        .letterbox-frame {
+            position: relative;
+            background: #000; /* The black bars */
+            padding: 50px 0; /* Adjust height of bars */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .letterbox-frame:hover {
+            transform: scale(1.02);
+        }
+
+        .letterbox-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: sepia(20%) contrast(90%);
+            transition: 0.6s filter;
+        }
+
+        .letterbox-frame:hover img {
+            filter: sepia(0%) contrast(100%);
+        }
+
+        /* Caption as a handwritten note */
+        .caption {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: white;
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .letter-section {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            padding: 100px 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .letter-text {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        footer {
+            padding: 40px;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        /* Smooth scroll effect */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Dress</h1>
+        <div class="subtitle">Inspired by Dijon</div>
+    </header>
+
+    <div class="gallery">
+        <div class="letterbox-frame">
+            <img src="flower1.jpg" alt="Memory One">
+            <div class="caption">Scene 01</div>
+        </div>
+
+        <div class="letterbox-frame">
+            <img src="flower2.jpg" alt="Memory Two">
+            <div class="caption">Scene 02</div>
+        </div>
+
+        <div class="letterbox-frame">
+            <img src="flower3.jpg" alt="Memory Three">
+            <div class="caption">Scene 03</div>
+        </div>
+    </div>
+    
+    
+</div>
+
+    <section class="letter-section">
+        <p class="letter-text">
+            "I don't think I'll ever forget that night.<br>
+            The way everything seemed to slow down.<br>
+            It’s just a feeling I wanted to keep."
+        </p>
+    </section>
+
+    <footer>
+        MADE WITH CARE &bull; 2026
+    </footer>
+
+<script>
+    function startExperience() {
+        var audio = document.getElementById("music-container");
+        var overlay = document.getElementById("overlay");
+        
+        // Start the music
+        audio.play();
+        
+        // Hide the overlay
+        overlay.style.opacity = "0";
+        setTimeout(function() {
+            overlay.style.display = "none";
+        }, 1000); // Waits for the fade-out to finish
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+:root {
+    --bg-color: #f8f4ed; /* Warm, creamy off-white */
+    --text-dark: #1a1a1a;
+    --accent-gray: #7a7a7a;
+    --black-bar: #080808; /* Deep black for the letterbox */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* This adds a subtle grain overlay across the whole page */
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+}
+
+/* --- Typography --- */
+
+header {
+    margin: 80px 0 60px 0;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 4rem;
+    margin-bottom: 5px;
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent-gray);
+}
+
+/* --- The Cinematic Letterbox --- */
+
+.gallery {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Tight gap to look like a film strip */
+}
+
+.letterbox-frame {
+    position: relative;
+    background-color: var(--black-bar);
+    padding: 45px 0; /* These are your "Black Bars" */
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.letterbox-frame img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    /* Softens the images to look like film */
+    filter: brightness(0.9) contrast(1.1) sepia(10%);
+    transition: transform 1.2s ease, filter 0.8s ease;
+}
+
+/* Hover effect: Subtle zoom and clarity */
+.letterbox-frame:hover img {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1) sepia(0%);
+}
+
+.caption {
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- The Letter & Footer --- */
+
+.letter-section {
+    margin-top: 60px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+}
+
+.letter-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #444;
+}
+
+footer {
+    margin: 60px 0 40px 0;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 20px;
+    width: 80%;
+    text-align: center;
+    opacity: 0.4;
+}
+
